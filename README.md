@@ -13,8 +13,7 @@ Code and contents for Team A
 
 # Communications:
 
-Typically we ideally expect 2 hours for a response unless on a tricky hour of the day. otherwise feel free to message via phone in the created text groupchat on imessage. for our @everyone policy, dont feel like you cant use it, but when you mention someone, make it a general announcement. For responding to individual members in the team group, if you dont know an answer, still explain your stance on the problem so that we know how everyone feels. If everyone feels as though they are stuck, we can consult outside help from Professor Nelson
-
+Typically we ideally expect 2 hours for a discord response. At the maximum, we would like to prioritize a response by the afternoon of the next day (12:00pm). Otherwise feel free to message via phone in the created text group chat on imessage. for our @everyone policy, don't feel like you can't use it, but when you mention someone, make it a general announcement. For responding to individual members in the team group, if you don't know an answer, still explain your stance on the problem so that we know how everyone feels. If everyone feels as though they are stuck, we can consult outside help from Professor Nelson
 
 
 
