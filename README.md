@@ -1,6 +1,10 @@
 # TeamA - Team Asynchronus
 Code and contents for Team A
 
+# TeamA Mission Statment
+
+Asynchronus is committed to guiding graduate computer science students through the transition from academia to industry by providing a clear, supportive platform to build resumes, showcase professional profiles, connect with mentors, and actively pursue career opportunities.
+
 
 # Purpose of the project - who is working on it and what their roles are:
 + Brendon Price - Project manager 
