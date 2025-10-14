@@ -42,6 +42,31 @@ Typically we ideally expect 2 hours for a discord response. At the maximum, we w
 
 After graduating from college, computer science students often face a steep drop-off in structured support for navigating the job market. Without the institutional backing of college, such as career centers, faculty guidance, or peer networks, many find themselves isolated and uncertain about how to approach their job search. Throughout their academic career, there have been provided counselors, administrators, and even peers who were always readily available to answer questions to be had about the next phases of life, but as time under an institution ends, so does the assistance from counselors. The lack of accessible mentorship and reliable resources leaves graduates struggling to make informed decisions, build professional connections, and maintain momentum in their transition from academia to industry. How can we ensure that assistance is given to those in need, in a less temporary period of time?
 
+# Steps for starting the project (In Progress)
+
+Create a Folder for this Project:
+
+mkdir Project
+cd Project
+
+Next clone the repo:
+
+https://github.com/COS420-F25/TeamA.git
+
+
+Next change directory to carrerwise:
+
+cd careerwise
+
+
+Install NPM
+
+npm install
+
+Finally test it by running npm:
+
+npm run start
+
 
 
 
