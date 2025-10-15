@@ -1,4 +1,4 @@
-# TeamA - Team Asynchronus
+# TeamA - Team Asynchronous
 Code and contents for Team A
 
 # TeamA Mission Statment
