@@ -55,9 +55,9 @@ NodeJS: https://nodejs.org/en/download
 Visual studio code: https://code.visualstudio.com/
 
 Download These extension for VS Code:
-ESLint
-Prettier
-Jest
+*ESLint
+*Prettier
+*Jest
 
 To verify the installations in the VS code terminal run
 
@@ -74,22 +74,22 @@ FireFox: https://addons.mozilla.org/en-US/firefox/addon/react-devtools/
 
 1. Create a Folder for this Project:
 
-mkdir Project
+mkdir Project &&
 cd Project
 
 2. Next clone the repo:
 
-https://github.com/COS420-F25/TeamA.git
+git clone https://github.com/COS420-F25/TeamA.git
 
 3. Next change directory to carrerwise:
 
-cd careerwise
+cd carrerwise
 
 4. Install NPM
 
 npm install
 
-Finally test the code by running npm:
+5. Finally test the code by running npm:
 
 npm run start
 
