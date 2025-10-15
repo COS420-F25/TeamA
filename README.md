@@ -55,9 +55,9 @@ NodeJS: https://nodejs.org/en/download
 Visual studio code: https://code.visualstudio.com/
 
 Download These extension for VS Code:
-*ESLint
-*Prettier
-*Jest
+ESLint,
+Prettier,
+Jest
 
 To verify the installations in the VS code terminal run
 
