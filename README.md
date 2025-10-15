@@ -44,32 +44,53 @@ After graduating from college, computer science students often face a steep drop
 
 # Steps for starting the project (In Progress)
 
-Create a Folder for this Project:
+# Step 1: Enviorment
+
+You will need to download these things first:
+
+Git: https://git-scm.com/downloads
+
+NodeJS: https://nodejs.org/en/download
+
+Visual studio code: https://code.visualstudio.com/
+
+Download These extension for VS Code:
+ESLint
+Prettier
+Jest
+
+To verify the installations in the VS code terminal run
+
+npm --version (for NodeJS)
+git --version (for git)
+
+Lastly Download React Developer tools on browser
+
+Chrome: https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?pli=1
+
+FireFox: https://addons.mozilla.org/en-US/firefox/addon/react-devtools/
+
+# Step 2: Clone & start project locally
+
+1. Create a Folder for this Project:
 
 mkdir Project
 cd Project
 
-Next clone the repo:
+2. Next clone the repo:
 
 https://github.com/COS420-F25/TeamA.git
 
-
-Next change directory to carrerwise:
+3. Next change directory to carrerwise:
 
 cd careerwise
 
-
-Install NPM
+4. Install NPM
 
 npm install
 
-Finally test it by running npm:
+Finally test the code by running npm:
 
 npm run start
-
-
-
-
-
 
 
