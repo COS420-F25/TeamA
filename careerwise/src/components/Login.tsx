@@ -6,7 +6,7 @@ import { useState } from "react"
 import { useRef } from "react";
 
 /* Import Mantine Components */
-import { Button, PasswordInput, TextInput, Container } from "@mantine/core";
+import { Button, PasswordInput, TextInput, Container, MantineTheme } from "@mantine/core";
 import { useForm } from "@mantine/form"
 import "@mantine/core/styles.css"
 
@@ -19,6 +19,7 @@ import "./Login.css"
  */
 
 interface LoginFormProps {
+	theme: MantineTheme
 }
 
 export function LoginForm(props: LoginFormProps): React.JSX.Element {
@@ -50,7 +51,7 @@ export function LoginForm(props: LoginFormProps): React.JSX.Element {
 			/>
 
 			{/* Log in button */}
-			<Button type="submit">Log in</Button>
+			<Button bg={props.theme.primaryColor} type="submit">Log in</Button>
 		</form>
 	</Container>
 }

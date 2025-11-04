@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
 
+/* Import Mantine Elements */
 import { MantineProvider } from '@mantine/core';
+import { DEFAULT_THEME } from '@mantine/core';
 
-import {auth} from "./firebase-config";
-import {useSignInWithGoogle} from "react-firebase-hooks/auth"
+/* Import authentication */
+import { auth } from "./firebase-config";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth"
+
+/* Import Custom Components */
+import { Header } from "./components/Header"
 import { LoginForm } from "./components/Login"
 import { GoogleLoginButton } from "./components/Login"
 
@@ -15,15 +21,19 @@ function App() {
   //signInWithGoogle() modifies the state. User state will be modified later
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-  return (
-	<MantineProvider> <div className="App">
+  return (<MantineProvider>
+	<div className="App">
+		{/* Header */}
+		<Header theme={DEFAULT_THEME}></Header>
+
       	{/* Log in fields */}
-	  	<LoginForm></LoginForm>
+	  	<LoginForm theme={DEFAULT_THEME}></LoginForm>
+
 	  	{/* Google Sign in Button */}
 	  	<GoogleLoginButton onclick={() => signInWithGoogle()}></GoogleLoginButton>
     	
-	</div> </MantineProvider> 
-  );
+	</div>
+	</MantineProvider>);
 }
 
 export default App;
