@@ -4,46 +4,55 @@
 
 import { useState } from "react"
 import { useRef } from "react";
+
+/* Import Mantine Components */
+import { Button, PasswordInput, TextInput, Container } from "@mantine/core";
+import { useForm } from "@mantine/form"
+import "@mantine/core/styles.css"
+
 import "./Login.css"
 
-/* Component Login:
+/* Component LoginForm:
  * Written by: Brady Dube, COS420 Team A
  * Provides a login component that has text boxes for username and password, and
  * a button to submit.
  */
 
-interface LoginFieldProps {
-	/* Use state set functions */
-	setEmail: (email: string) => void
-	setPassword: (password: string) => void
+interface LoginFormProps {
 }
 
-export function LoginField(props: LoginFieldProps): React.JSX.Element {
+export function LoginForm(props: LoginFormProps): React.JSX.Element {
+
+	/* Create Mantine form for login */
+	const loginForm = useForm({
+		mode:"uncontrolled",
+		initialValues: {
+			email: "",
+			password: ""
+		}
+	});
 	
-	/* Refs for email and password inputs*/
-	const emailRef = useRef<HTMLInputElement>(null);
-	const passwordRef = useRef<HTMLInputElement>(null);
+	/* Return the form */
+	return <Container>
+		<form>
+			{/* Email text box */}
+			<TextInput
+				placeholder="Email" 
+				key={loginForm.key("email")}
+				{...loginForm.getInputProps("email")}
+			/>
 
-	/* Helper function to update the credentials */
-	function setCredentials(): void {
-		if (emailRef.current && passwordRef.current) {
-			props.setEmail(emailRef.current.value);
-			props.setPassword(passwordRef.current.value);
-		}		
-	}
+			{/* Password text box */}
+			<PasswordInput
+				placeholder="Password" 
+				key={loginForm.key("password")}
+				{...loginForm.getInputProps("password")}
+			/>
 
-	/* Create the login field */
-	return <div>
-		{/* Username text box */}
-		<input type="text" ref={emailRef} placeholder="Email"></input>
-		<br/>
-		{/* Password text box */}
-		<input type="password" ref={passwordRef} placeholder="Password"></input>
-		<br/>
-		{/* Submit button */}
-		<button name="SubmitLogin" onClick={setCredentials}>Log in</button>
-
-	</div>
+			{/* Log in button */}
+			<Button type="submit">Log in</Button>
+		</form>
+	</Container>
 }
 
 /* Component GoogleLoginButton
