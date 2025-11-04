@@ -11,8 +11,8 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth"
 
 /* Import Custom Components */
 import { Header } from "./components/Header"
-import { LoginForm } from "./components/Login"
-import { GoogleLoginButton } from "./components/Login"
+import { LoginForm } from "./components/LoginForm"
+import { GoogleSigninButton } from "./components/GoogleSigninButton"
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
 	  	<LoginForm theme={DEFAULT_THEME}></LoginForm>
 
 	  	{/* Google Sign in Button */}
-	  	<GoogleLoginButton onclick={() => signInWithGoogle()}></GoogleLoginButton>
+	  	<GoogleSigninButton onclick={() => signInWithGoogle()}></GoogleSigninButton>
     	
 	</div>
 	</MantineProvider>);
