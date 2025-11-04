@@ -26,10 +26,13 @@ function App() {
 		{/* Header */}
 		<Header theme={DEFAULT_THEME}></Header>
 
+		{/* Title of form */}
+		<h2> Log in to CareerWise </h2>
       	{/* Log in fields */}
 	  	<LoginForm theme={DEFAULT_THEME}></LoginForm>
 
 	  	{/* Google Sign in Button */}
+		Or <br />
 	  	<GoogleSigninButton onclick={() => signInWithGoogle()}></GoogleSigninButton>
     	
 	</div>

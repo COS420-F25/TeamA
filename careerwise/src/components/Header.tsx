@@ -19,7 +19,7 @@ export function Header(props: HeaderProps): React.JSX.Element {
 
 	/* Return the Header */
 	return <header>
-		<Container h="8vh" bg={props.theme.primaryColor} fluid>
+		<Container h="4rem" bg={props.theme.primaryColor} fluid>
 			<Group align="center">
 				<h1 style={{color: props.theme.white}}>CareerWise</h1>
 			</Group>

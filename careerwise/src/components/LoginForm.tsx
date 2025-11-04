@@ -3,7 +3,16 @@
  */
 
 /* Import Mantine Components */
-import { Button, PasswordInput, TextInput, Container, MantineTheme } from "@mantine/core";
+import { 
+	Button, 
+	Container, 
+	PasswordInput, 
+	Stack,
+	TextInput, 
+	MantineTheme,
+	Flex,
+ } from "@mantine/core";
+
 import { useForm } from "@mantine/form"
 import "@mantine/core/styles.css"
 
@@ -29,10 +38,11 @@ export function LoginForm(props: LoginFormProps): React.JSX.Element {
 	});
 	
 	/* Return the form */
-	return <Container>
-		<form>
+	return <form>
+		<Stack gap="sm" align="center">
 			{/* Email text box */}
 			<TextInput
+				miw="24rem"
 				placeholder="Email" 
 				key={loginForm.key("email")}
 				{...loginForm.getInputProps("email")}
@@ -40,13 +50,14 @@ export function LoginForm(props: LoginFormProps): React.JSX.Element {
 
 			{/* Password text box */}
 			<PasswordInput
+				miw="24rem"
 				placeholder="Password" 
 				key={loginForm.key("password")}
 				{...loginForm.getInputProps("password")}
 			/>
 
 			{/* Log in button */}
-			<Button bg={props.theme.primaryColor} type="submit">Log in</Button>
-		</form>
-	</Container>
+			<Button miw="8rem" bg={props.theme.primaryColor} type="submit">Log in</Button>
+		</Stack>
+	</form>
 }
