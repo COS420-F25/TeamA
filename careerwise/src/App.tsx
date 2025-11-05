@@ -1,31 +1,67 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import {auth} from "./firebase-config";
-import {useSignInWithGoogle} from "react-firebase-hooks/auth"
-import { LoginField } from "./components/Login"
-import { GoogleLoginButton } from "./components/Login"
+/* Import Mantine Elements */
+import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space} from '@mantine/core';
+import { careerWiseTheme } from "./Theme";
+
+/* Import authentication */
+import { auth } from "./firebase-config";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth"
+
+/* Import Custom Components */
+import { Header } from "./components/Header"
+import { LoginForm } from "./components/LoginForm"
+import { GoogleSigninButton } from "./components/GoogleSigninButton"
 
 function App() {
-
-
-  /* Use state for email and password from user */
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
 
   // Sign in with Google
   //We need 4 values
   //signInWithGoogle() modifies the state. User state will be modified later
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-  return (
-    <div className="App">
-      {/* Log in fields */}
-	  <LoginField setEmail={setEmail} setPassword={setPassword}></LoginField>
-	  {/* Google Sign in Button */}
-	  <GoogleLoginButton onclick={() => signInWithGoogle()}></GoogleLoginButton>
-    </div>
-  );
+  // eslint-disable-next-line no-multi-str
+  const missionStatement = "Asynchronous is committed to guiding graduate \
+  computer science students through the transition from academia to industry \
+  by providing a clear, supportive platform to build resumes, showcase \
+  professional profiles, connect with mentors, and actively pursue career \
+  opportunities."
+
+  return (<MantineProvider theme={careerWiseTheme}>
+	<div className="App">
+		{/* Header */}
+		<Header />
+		<Space h="xl" />
+
+		<Container size="80%">
+			<Flex
+				direction={{base: "column-reverse", sm: "row"}}
+				gap="xl"
+				align="center"
+			>
+				{/* Left side: Mission Statement */}
+				<Paper flex={1} p="md" shadow="xs" radius="md" withBorder>
+					<Title order={3}>Mission Statement</Title>
+					<Text>{missionStatement}</Text>
+				</Paper>
+
+				{/* Right side: Login fields */}
+				<Stack flex={1} align="center" gap="md">
+					{/* Title of form */}
+					<Title order={3}> Log in to CareerWise </Title>
+					{/* Log in fields */}
+					<LoginForm />
+
+					{/* Google Sign in Button */}
+					<Text>Or</Text>
+					<GoogleSigninButton onclick={() => signInWithGoogle()} />
+				</Stack>
+			</Flex>
+		</Container>
+    	
+	</div>
+	</MantineProvider>);
 }
 
 export default App;
