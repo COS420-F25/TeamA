@@ -5,12 +5,10 @@
 /* Import Mantine Components */
 import { 
 	Button, 
-	Container, 
 	PasswordInput, 
 	Stack,
 	TextInput, 
-	MantineTheme,
-	Flex,
+	useMantineTheme,
  } from "@mantine/core";
 
 import { useForm } from "@mantine/form"
@@ -23,10 +21,11 @@ import "@mantine/core/styles.css"
  */
 
 interface LoginFormProps {
-	theme: MantineTheme
 }
 
 export function LoginForm(props: LoginFormProps): React.JSX.Element {
+
+	const theme = useMantineTheme();
 
 	/* Create Mantine form for login */
 	const loginForm = useForm({
@@ -57,7 +56,7 @@ export function LoginForm(props: LoginFormProps): React.JSX.Element {
 			/>
 
 			{/* Log in button */}
-			<Button miw="8rem" bg={props.theme.primaryColor} type="submit">Log in</Button>
+			<Button miw="8rem" bg={theme.primaryColor} type="submit">Log in</Button>
 		</Stack>
 	</form>
 }

@@ -3,7 +3,7 @@
  */
 
 /* Import Mantine Components */
-import { Container, Group, MantineTheme } from "@mantine/core";
+import { Container, Group, useMantineTheme } from "@mantine/core";
 
 /* Component Header:
  * Written by: Brady Dube, COS420 Team A
@@ -12,16 +12,17 @@ import { Container, Group, MantineTheme } from "@mantine/core";
  */
 
 interface HeaderProps {
-	theme: MantineTheme
 }
 
 export function Header(props: HeaderProps): React.JSX.Element {
 
+	const theme = useMantineTheme();
+
 	/* Return the Header */
 	return <header>
-		<Container h="4rem" bg={props.theme.primaryColor} fluid>
+		<Container h="4rem" bg={theme.primaryColor} fluid>
 			<Group align="center">
-				<h1 style={{color: props.theme.white}}>CareerWise</h1>
+				<h1 style={{color: theme.white}}>CareerWise</h1>
 			</Group>
 		</Container>
 	</header>

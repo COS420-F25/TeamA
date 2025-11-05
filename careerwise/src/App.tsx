@@ -3,7 +3,7 @@ import './App.css';
 
 /* Import Mantine Elements */
 import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space} from '@mantine/core';
-import { DEFAULT_THEME } from '@mantine/core';
+import { careerWiseTheme } from "./Theme";
 
 /* Import authentication */
 import { auth } from "./firebase-config";
@@ -28,10 +28,10 @@ function App() {
   professional profiles, connect with mentors, and actively pursue career \
   opportunities."
 
-  return (<MantineProvider>
+  return (<MantineProvider theme={careerWiseTheme}>
 	<div className="App">
 		{/* Header */}
-		<Header theme={DEFAULT_THEME}></Header>
+		<Header />
 		<Space h="xl" />
 
 		<Container size="80%">
@@ -51,7 +51,7 @@ function App() {
 					{/* Title of form */}
 					<Title order={3}> Log in to CareerWise </Title>
 					{/* Log in fields */}
-					<LoginForm theme={DEFAULT_THEME} />
+					<LoginForm />
 
 					{/* Google Sign in Button */}
 					<Text>Or</Text>
