@@ -9,14 +9,15 @@ import { careerWiseTheme } from "./Theme";
 import { auth, db } from "./firebase-config";
 import {collection} from "firebase/firestore";
 import {useCollection} from "react-firebase-hooks/firestore";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {useSignInWithGoogle} from "react-firebase-hooks/auth";
+import {signOut} from 'firebase/auth'; //I found signOut. Going to try it out
 
 /* Import Custom Components */
 import { Header } from "./components/Header";
 import { LoginForm } from "./components/LoginForm";
 import { GoogleSigninButton } from "./components/GoogleSigninButton";
 
-function LoginView() { //Needs to be reformatted is still currently in progress
+function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
 
   //This line needs to be removed to App()
   //const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -28,7 +29,10 @@ function LoginView() { //Needs to be reformatted is still currently in progress
   professional profiles, connect with mentors, and actively pursue career \
   opportunities."
 
-  return (<MantineProvider theme={careerWiseTheme}>
+  return (
+	//The below commented code I don't think needs to be in Login View.
+	//Rather it should be in App()
+	//<MantineProvider theme={careerWiseTheme}>
 	<div className="App">
 		{/* Header */}
 		<Header />
@@ -55,13 +59,17 @@ function LoginView() { //Needs to be reformatted is still currently in progress
 
 					{/* Google Sign in Button */}
 					<Text>Or</Text>
-					<GoogleSigninButton onclick={() => signInWithGoogle()} />
+					{/* Fixed signIn by directly refrencing it.
+					/*  Instead of using the arrow function. */}
+					<GoogleSigninButton onclick={signInWithGoogle} />
 				</Stack>
 			</Flex>
 		</Container>
     	
 	</div>
-	</MantineProvider>);
+	//Removed end as well
+	//</MantineProvider>
+	);
 }
 
 function DashboardView() { //Incomplete
