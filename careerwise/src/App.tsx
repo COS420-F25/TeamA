@@ -75,11 +75,21 @@ function App() {
   	//signInWithGoogle() modifies the state. User state will be modified later
 	const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-	  if (loading) {
+	if(loading) {
 		return (
-			something; //Basic logic
-		)
-	  }
+			something;
+		);
+	}
+
+	if(error) {
+		return (
+			something;
+		);
+	}
+
+	return (
+		//Main return state. Dependant on user state.
+	)
 }
 
 export default App;
