@@ -96,3 +96,11 @@ npm install
 npm run start
 
 
+# React Login steps:
+
+cd careerwise
+
+npm install firebase
+
+npm install react-firebase-hooks
+
