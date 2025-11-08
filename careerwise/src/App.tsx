@@ -6,20 +6,20 @@ import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space} fro
 import { careerWiseTheme } from "./Theme";
 
 /* Import authentication */
-import { auth } from "./firebase-config";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth"
+import { auth, db } from "./firebase-config";
+import {collection} from "firebase/firestore";
+import {useCollection} from "react-firebase-hooks/firestore";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 /* Import Custom Components */
-import { Header } from "./components/Header"
-import { LoginForm } from "./components/LoginForm"
-import { GoogleSigninButton } from "./components/GoogleSigninButton"
+import { Header } from "./components/Header";
+import { LoginForm } from "./components/LoginForm";
+import { GoogleSigninButton } from "./components/GoogleSigninButton";
 
-function LoginView() {
+function LoginView() { //Needs to be reformatted is still currently in progress
 
-  // Sign in with Google
-  //We need 4 values
-  //signInWithGoogle() modifies the state. User state will be modified later
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  //This line needs to be removed to App()
+  //const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   // eslint-disable-next-line no-multi-str
   const missionStatement = "Asynchronous is committed to guiding graduate \
@@ -64,9 +64,22 @@ function LoginView() {
 	</MantineProvider>);
 }
 
+function DashboardView() { //Incomplete
 
+}
+
+//Incomplete
 function App() {
+	// Sign in with Google
+  	//We need 4 values
+  	//signInWithGoogle() modifies the state. User state will be modified later
+	const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
+	  if (loading) {
+		return (
+			something; //Basic logic
+		)
+	  }
 }
 
 export default App;
