@@ -72,7 +72,9 @@ function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now 
 	);
 }
 
-function DashboardView() { //Incomplete
+//Adding props this time for user
+function DashboardView({user}: {user: something}) { //User can be a lot of things. Will look into this
+	const SignOutMethod = () => {signOut(auth)}; //Sign out method
 
 }
 
