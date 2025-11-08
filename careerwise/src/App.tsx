@@ -14,7 +14,7 @@ import { Header } from "./components/Header"
 import { LoginForm } from "./components/LoginForm"
 import { GoogleSigninButton } from "./components/GoogleSigninButton"
 
-function App() {
+function LoginView() {
 
   // Sign in with Google
   //We need 4 values
@@ -62,6 +62,11 @@ function App() {
     	
 	</div>
 	</MantineProvider>);
+}
+
+
+function App() {
+
 }
 
 export default App;
