@@ -1,6 +1,7 @@
 /* File GoogleSigninButton.tsx
  * Contains Google Sign in Component
  */
+import React from "react";
 
 /* Component GoogleSigninButton
  * Provides a "Sign in with Google" button.

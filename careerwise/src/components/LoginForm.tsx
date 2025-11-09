@@ -1,6 +1,7 @@
 /* File LoginForm.tsx
  * Contains login/signin form for entering username/password
  */
+import React from "react";
 
 /* Import Mantine Components */
 import { 
