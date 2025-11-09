@@ -1,6 +1,7 @@
 /* File Header.tsx
  * Contains components for website header, to be used across most pages
  */
+import React from "react";
 
 /* Import Mantine Components */
 import { Container, Group, useMantineTheme } from "@mantine/core";
