@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 /* Import Mantine Elements */
-import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space} from '@mantine/core';
+import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space, Button} from '@mantine/core';
 import { careerWiseTheme } from "./Theme";
 
 /* Import authentication */
@@ -11,6 +11,8 @@ import {collection} from "firebase/firestore";
 import {useCollection} from "react-firebase-hooks/firestore";
 import {useSignInWithGoogle} from "react-firebase-hooks/auth";
 import {signOut} from 'firebase/auth'; //I found signOut. Going to try it out
+
+import {User as FirebaseUser} from "firebase/auth";
 
 /* Import Custom Components */
 import { Header } from "./components/Header";
@@ -73,8 +75,28 @@ function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now 
 }
 
 //Adding props this time for user
-function DashboardView({user}: {user: something}) { //User can be a lot of things. Will look into this
-	const SignOutMethod = () => {signOut(auth)}; //Sign out method
+function DashboardView({user}: {user: FirebaseUser}) { //User can be a lot of things. Will look into this
+	const SignOutMethod = () => {
+		signOut(auth);
+	}; //Sign out method
+
+
+    return (
+
+		/*Copying same structure from Login V */
+		<div className="App">
+		<Header />
+		<Space h="xl" />
+		<Container size="80%">
+			<Stack gap="md">
+				<Text>Hello your Email is: {user.email}</Text>
+
+				{/*Add sign out button */}
+				<Button onClick={SignOutMethod} color="red">Sign out</Button>
+			</Stack>
+		</Container>
+		</div>
+	);
 
 }
 
