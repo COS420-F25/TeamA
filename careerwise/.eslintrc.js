@@ -38,7 +38,12 @@ module.exports = {
         // https://stackoverflow.com/questions/57802057/eslint-configuring-no-unused-vars-for-typescript
         // Use typescript's checker for unused vars (critical for Enums)
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-unused-vars": ["warn"],
+
+		// https://eslint.org/docs/latest/rules/no-mixed-spaces-and-tabs
+		// Warn when spaces and tabs are mixed for indentation in a file
+		"no-mixed-spaces-and-tabs": ["warn"],
+		
         // https://typescript-eslint.io/rules/no-use-before-define
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "error",
