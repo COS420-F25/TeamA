@@ -1,0 +1,19 @@
+Title	URL	Status	Priority	Story Type	Estimate (Story Points)	Points Completed	Assignees	Contributors and % contribution	Quality Reviewer	Start date	End date (ready for QC by)	Deliverable / Sprint	Milestone
+As a user I want to be able to login so that I can have all my account information stored and keep track of what progress is being made by my profile.	https://github.com/COS420-F25/TeamA/issues/36	60-90% done	High	Requirements	3		bdube21, DeveauJoshua2002	Brady: 50% Josh: 50%				Deliverable 3	
+Finding example documents for developers	https://github.com/COS420-F25/TeamA/issues/86	Done					brendonprice	Brady, Josh, Alex, Brendon: 25% each (done synchronously)				Deliverable 3	D3 Quality Checking Milestone
+Add Sprint Numbers and Story Points to Product Backlog	https://github.com/COS420-F25/TeamA/issues/89	Done					brendonprice	Brendon: 100%				Deliverable 3	D3 Quality Checking Milestone
+SRS Revisions	https://github.com/COS420-F25/TeamA/issues/95	Done					AlexN-H	Alex: 100%				Deliverable 3	D3 Quality Checking Milestone
+Use Case Diagrams/Models and Descriptions Revisions	https://github.com/COS420-F25/TeamA/issues/97	Done					AlexN-H	Alex: 100%				Deliverable 3	D3 Quality Checking Milestone
+Architecture Design Revisions	https://github.com/COS420-F25/TeamA/issues/98	Done										Deliverable 3	D3 Quality Checking Milestone
+Revise UI Mockups	https://github.com/COS420-F25/TeamA/issues/99	Done										Deliverable 3	D3 Quality Checking Milestone
+Create 3 Automated Tests for Login Feature	https://github.com/COS420-F25/TeamA/issues/105	Quality Checking					bdube21	Brady: 100%			Nov 7, 2025	Deliverable 3	D3 Quality Checking Milestone
+Create Domain Model Diagram	https://github.com/COS420-F25/TeamA/issues/91	Quality Checking					brendonprice	Brady: 50% Brendon: 50%				Deliverable 3	D3 Quality Checking Milestone
+Create Domain Model Description	https://github.com/COS420-F25/TeamA/issues/94	Quality Checking					bdube21	Brady: 90% Brendon: 10% 				Deliverable 3	D3 Quality Checking Milestone
+Set up CI with GitHub Actions	https://github.com/COS420-F25/TeamA/issues/92	Quality Checking					bdube21	Brady: 100%				Deliverable 3	D3 Quality Checking Milestone
+Create Meeting Policy	https://github.com/COS420-F25/TeamA/issues/84	Quality Checking					bdube21	Brady: 100%	Brendon P			Deliverable 3	D3 Quality Checking Milestone
+Add Progress Percentage to Sprint Backlog	https://github.com/COS420-F25/TeamA/issues/90	Quality Checking					brendonprice	Brendon: 100%				Deliverable 3	D3 Quality Checking Milestone
+Set up KanBan Roadmap for D3	https://github.com/COS420-F25/TeamA/issues/83	Todo / Sprint Backlog					DeveauJoshua2002		Brady D			Deliverable 3	D3 Quality Checking Milestone
+Update quality checking policy	https://github.com/COS420-F25/TeamA/issues/85	In Progress					DeveauJoshua2002					Deliverable 3	D3 Quality Checking Milestone
+Record 1-10 minute video showing progress	https://github.com/COS420-F25/TeamA/issues/88	In Progress					DeveauJoshua2002					Deliverable 3	D3 Quality Checking Milestone
+Update Use Case Diagram	https://github.com/COS420-F25/TeamA/issues/100	In Progress					AlexN-H	Alex: 100%				Deliverable 3	D3 Quality Checking Milestone
+Usability Testing Script	https://github.com/COS420-F25/TeamA/issues/103	Todo / Sprint Backlog					AlexN-H					Deliverable 3	D3 Quality Checking Milestone
