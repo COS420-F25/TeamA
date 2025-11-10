@@ -1,127 +1,145 @@
-import React, { useState } from 'react';
-import './App.css';
+	import React from 'react';
+	import './App.css';
 
-/* Import Mantine Elements */
-import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space, Button} from '@mantine/core';
-import { careerWiseTheme } from "./Theme";
+	/* Import Mantine Elements */
+	import { Container, Flex, MantineProvider, Paper, Stack, Title, Text, Space, Button} from '@mantine/core';
+	import { careerWiseTheme } from "./Theme";
 
-/* Import authentication */
-import { auth, db } from "./firebase-config";
-import {collection} from "firebase/firestore";
-import {useCollection} from "react-firebase-hooks/firestore";
-import {useSignInWithGoogle} from "react-firebase-hooks/auth";
-import {signOut} from 'firebase/auth'; //I found signOut. Going to try it out
+	/* Import authentication */
+	import {auth} from "./firebase-config";
+	//import {collection} from "firebase/firestore";
+	//import {useCollection} from "react-firebase-hooks/firestore";
+	import {useSignInWithGoogle} from "react-firebase-hooks/auth";
+	import {signOut} from 'firebase/auth'; //I found signOut. Going to try it out
+	import {User as FirebaseUser} from "firebase/auth";
+	import { useAuthState} from 'react-firebase-hooks/auth';
 
-import {User as FirebaseUser} from "firebase/auth";
+	/* Import Custom Components */
+	import { Header } from "./components/Header";
+	import { LoginForm } from "./components/LoginForm";
+	import { GoogleSigninButton } from "./components/GoogleSigninButton";
 
-/* Import Custom Components */
-import { Header } from "./components/Header";
-import { LoginForm } from "./components/LoginForm";
-import { GoogleSigninButton } from "./components/GoogleSigninButton";
+	function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
 
-function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
+	//This line needs to be removed to App()
+	//const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-  //This line needs to be removed to App()
-  //const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
-  // eslint-disable-next-line no-multi-str
-  const missionStatement = "Asynchronous is committed to guiding graduate \
-  computer science students through the transition from academia to industry \
-  by providing a clear, supportive platform to build resumes, showcase \
-  professional profiles, connect with mentors, and actively pursue career \
-  opportunities."
-
-  return (
-	//The below commented code I don't think needs to be in Login View.
-	//Rather it should be in App()
-	//<MantineProvider theme={careerWiseTheme}>
-	<div className="App">
-		{/* Header */}
-		<Header />
-		<Space h="xl" />
-
-		<Container size="80%">
-			<Flex
-				direction={{base: "column-reverse", sm: "row"}}
-				gap="xl"
-				align="center"
-			>
-				{/* Left side: Mission Statement */}
-				<Paper flex={1} p="md" shadow="xs" radius="md" withBorder>
-					<Title order={3}>Mission Statement</Title>
-					<Text>{missionStatement}</Text>
-				</Paper>
-
-				{/* Right side: Login fields */}
-				<Stack flex={1} align="center" gap="md">
-					{/* Title of form */}
-					<Title order={3}> Log in to CareerWise </Title>
-					{/* Log in fields */}
-					<LoginForm />
-
-					{/* Google Sign in Button */}
-					<Text>Or</Text>
-					{/* Fixed signIn by directly refrencing it.
-					/*  Instead of using the arrow function. */}
-					<GoogleSigninButton onclick={signInWithGoogle} />
-				</Stack>
-			</Flex>
-		</Container>
-    	
-	</div>
-	//Removed end as well
-	//</MantineProvider>
-	);
-}
-
-//Adding props this time for user
-function DashboardView({user}: {user: FirebaseUser}) { //User can be a lot of things. Will look into this
-	const SignOutMethod = () => {
-		signOut(auth);
-	}; //Sign out method
-
-
-    return (
-
-		/*Copying same structure from Login V */
-		<div className="App">
-		<Header />
-		<Space h="xl" />
-		<Container size="80%">
-			<Stack gap="md">
-				<Text>Hello your Email is: {user.email}</Text>
-
-				{/*Add sign out button */}
-				<Button onClick={SignOutMethod} color="red">Sign out</Button>
-			</Stack>
-		</Container>
-		</div>
-	);
-
-}
-
-//Incomplete
-function App() {
-	// Sign in with Google
-  	//We need 4 values
-  	//signInWithGoogle() modifies the state. User state will be modified later
-	const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
-	if(loading) {
-		return (
-			something;
-		);
-	}
-
-	if(error) {
-		return (
-			something;
-		);
-	}
+	// eslint-disable-next-line no-multi-str
+	const missionStatement = "Asynchronous is committed to guiding graduate \
+	computer science students through the transition from academia to industry \
+	by providing a clear, supportive platform to build resumes, showcase \
+	professional profiles, connect with mentors, and actively pursue career \
+	opportunities."
 
 	return (
-		//Main return state. Dependant on user state.
-	)
-}
+		<div className="App">
+			{/* Header */}
+			<Header />
+			<Space h="xl" />
 
-export default App;
+			<Container size="80%">
+				<Flex
+					direction={{base: "column-reverse", sm: "row"}}
+					gap="xl"
+					align="center"
+				>
+					{/* Left side: Mission Statement */}
+					<Paper flex={1} p="md" shadow="xs" radius="md" withBorder>
+						<Title order={3}>Mission Statement</Title>
+						<Text>{missionStatement}</Text>
+					</Paper>
+
+					{/* Right side: Login fields */}
+					<Stack flex={1} align="center" gap="md">
+						{/* Title of form */}
+						<Title order={3}> Log in to CareerWise </Title>
+						{/* Log in fields */}
+						<LoginForm />
+
+						{/* Google Sign in Button */}
+						<Text>Or</Text>
+						<GoogleSigninButton onclick={signInWithGoogle} />
+					</Stack>
+				</Flex>
+			</Container>
+			
+		</div>
+		);
+	}
+
+	//Adding props this time for user
+	function DashboardView({user}: {user: FirebaseUser}) {
+		const SignOutMethod = () => {
+			signOut(auth);
+		}; //Sign out method
+
+
+		return (
+
+			/*Copying same structure from Login V */
+			<div className="App">
+			<Header />
+			<Space h="xl" />
+			<Container size="80%">
+				<Stack gap="md">
+					<Text>Hello your Email is: {user.email}</Text>
+
+					{/*Add sign out button */}
+					<Button onClick={SignOutMethod} color="red">Sign out</Button>
+				</Stack>
+			</Container>
+			</div>
+		);
+
+	}
+
+
+	//I think the key thing wrong is something in here
+	function App() {
+
+		//Get current user and authentication state
+		const [CurrentUser, authLoading, authError] = useAuthState(auth);
+		//Signinwithgoogle I've ignored user cause I'm trying to handle it elsewhere
+		const [signInWithGoogle, ,SignInLoading, SignInError] = useSignInWithGoogle(auth);
+
+		//Show a loading screen
+		if(authLoading || SignInLoading) {
+			return (
+				//Add MantineProvider here
+				<MantineProvider theme={careerWiseTheme}>
+					<Container size="80%" mt="xl">
+						{/*Add loading page */}
+						<Text ta="center" size="xl">Loading....</Text>
+					</Container>
+				</MantineProvider>
+			);
+		}
+
+		//Show error screen if there's an auth or sign in error
+		const combinedError = SignInError || authError;
+		if(combinedError) {
+			return (
+				<MantineProvider theme={careerWiseTheme}>
+					<Container size="80%" mt="xl">
+						{/*Add error page */}
+						<Text ta="center" size="xl">Error: {combinedError.message}</Text>
+					</Container>
+				</MantineProvider>
+			);
+		}
+
+		return (
+			//Conditional show dashboard if the user is authenticated else do the login view.
+			<MantineProvider theme={careerWiseTheme}>
+				{CurrentUser ? (
+					<DashboardView user={CurrentUser} />
+				) : (
+					<LoginView signInWithGoogle={signInWithGoogle} />
+
+				)}
+			</MantineProvider>
+		)
+
+	}
+
+	export default App;
