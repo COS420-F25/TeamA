@@ -58,7 +58,7 @@
 
 						{/* Google Sign in Button */}
 						<Text>Or</Text>
-						<GoogleSigninButton onclick={signInWithGoogle} />
+						<GoogleSigninButton onclick={() => {signInWithGoogle()}} />
 					</Stack>
 				</Flex>
 			</Container>
