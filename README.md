@@ -83,6 +83,8 @@ git clone https://github.com/COS420-F25/TeamA.git
 
 3. Next change directory to carrerwise:
 
+cd TeamA
+
 cd carrerwise
 
 4. Install NPM
@@ -93,4 +95,12 @@ npm install
 
 npm run start
 
+
+# React Login steps:
+
+cd careerwise
+
+npm install firebase
+
+npm install react-firebase-hooks
 

@@ -1,0 +1,15 @@
+Title	URL	Milestone	Deliverable / Sprint	User Story	Story Type	Priority	Estimate (Story Points)	Status
+As a project manager, I want to prioritize page layout and UI interface to be clear and concise so that we don't ironically make the job search more overwhelming	https://github.com/COS420-F25/TeamA/issues/42		D2	Yes		High		Done
+As a user, I want to upload my resume so that advisors/mentors can understand my academic and professional history	https://github.com/COS420-F25/TeamA/issues/35			Yes		High		Product Backlog
+As a user, I want to directly message (not email) through the website mentors so that I can receive a fast response	https://github.com/COS420-F25/TeamA/issues/33			Yes		High		Product Backlog
+As a user, I want an interface to enter my career goals and expectations for tracking within the application so that I can make my career search as fitting as possible.	https://github.com/COS420-F25/TeamA/issues/40			Yes		High		Product Backlog
+As a user, I want a search bar so that I can filter the available resources by my career interest.	https://github.com/COS420-F25/TeamA/issues/32			Yes		High		Product Backlog
+As a user, I want to be able to bookmark favourite resources/mentors so that I can revisit them later. 	https://github.com/COS420-F25/TeamA/issues/37			Yes		High		Product Backlog
+As a user I want to be able to login so that I can have all my account information stored and keep track of what progress is being made by my profile.	https://github.com/COS420-F25/TeamA/issues/36			Yes		High		Product Backlog
+As a user I want a progress tracker to track completed goals, mentor feedback, and other stats so that I can monitor my development over time. 	https://github.com/COS420-F25/TeamA/issues/38			Yes		Medium		Product Backlog
+As a user, I want a discussion board/forum so that I can connect with other users in similar positions. 	https://github.com/COS420-F25/TeamA/issues/39			Yes		Medium		Product Backlog
+As a mentor, I want an option to submit my mentor profiles consisting of personal as well as educational information so that users can feel more confident and comfortable in choosing who guides them	https://github.com/COS420-F25/TeamA/issues/43			Yes		Medium		Product Backlog
+As a user, I want there to be a “reviews” or “contact us” option so that the application can continuously be improved	https://github.com/COS420-F25/TeamA/issues/41			Yes		Medium		Product Backlog
+As a user, I want to be directly notified when new resources related to my career interests are available so that I can easily stay up-to-date.	https://github.com/COS420-F25/TeamA/issues/34			Yes		Low		Product Backlog
+As a user, I want there to be a “Network map” or a “bubble map” so that I  can see who is connected to who.	https://github.com/COS420-F25/TeamA/issues/44			Yes		Low		Product Backlog
+As a user, I want both user and mentor profiles to be connected to LinkedIn so that I can display my professional network to others and expand the visibility of my information	https://github.com/COS420-F25/TeamA/issues/45			Yes		Low		Product Backlog
