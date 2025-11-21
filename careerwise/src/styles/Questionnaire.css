@@ -1,0 +1,56 @@
+/* Container styling */
+.questionnaire-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header ribbon */
+.header-ribbon {
+  background-color: #f4a300; /* orange */
+  color: #000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Questionnaire button */
+.questionnaire-button {
+  background-color: #d32f2f; /* red */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Question block */
+.question-block {
+  margin-bottom: 1.5rem;
+}
+
+.option-label {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Submit button */
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #d32f2f;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
