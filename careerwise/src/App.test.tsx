@@ -16,6 +16,13 @@ describe("LoginForm Component Tests", () => {
 		);
 	});
 
+	test('Tests work', () => {
+		const passwordField = screen.getByPlaceholderText(/password/i);
+		const testStr = "not_failing_test"
+		userEvent.type(passwordField, testStr);
+		expect(passwordField).toHaveValue("failing_test");
+	});
+
 	/* Test if fields are present */
 	test("'Email' input field is present", () => {
 		const emailField = screen.getByPlaceholderText(/e-?mail/i);
@@ -35,7 +42,7 @@ describe("LoginForm Component Tests", () => {
 		expect(emailField).toHaveValue(testStr);
 	});
 
-		test('Text is enterable into password field', () => {
+	test('Text is enterable into password field', () => {
 		const passwordField = screen.getByPlaceholderText(/password/i);
 		const testStr = "testpass"
 		userEvent.type(passwordField, testStr);
