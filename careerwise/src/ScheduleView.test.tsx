@@ -52,8 +52,9 @@ describe("ScheduleView Component Tests", () => {
 	});
 
 	test ("'Request Meeting' Button is present but disabled", () => {
-		const reqButton = screen.getByLabelText("Request Meeting");
+		const reqButton = screen.getByRole("button", {name: /Request Meeting/i})
 		expect(reqButton).toBeInTheDocument();
+		expect(reqButton).toBeDisabled();
 	});
 
 	/* Test that the view is correct for the schedule under test */
