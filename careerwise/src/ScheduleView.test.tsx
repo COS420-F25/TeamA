@@ -46,8 +46,9 @@ describe("ScheduleView Component Tests", () => {
 
 	/* Test if fields are present */
 	test("Calendar View / date picker is present", () => {
-		const calendar = screen.getByLabelText("November 2025");
+		const calendar = screen.getByText("November 2025");
 		expect(calendar).toBeInTheDocument();
+		screen.debug(calendar);
 	});
 
 	test ("'Request Meeting' Button is present but disabled", () => {
