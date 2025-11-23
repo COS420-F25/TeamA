@@ -1,4 +1,4 @@
-	import React from 'react';
+	import React, { useState } from 'react';
 	import './App.css';
 
 	/* Import Mantine Elements */
@@ -18,6 +18,8 @@
 	import { Header } from "./components/Header";
 	import { LoginForm } from "./components/LoginForm";
 	import { GoogleSigninButton } from "./components/GoogleSigninButton";
+	import { TableReviews } from "./components/TableReview";
+	import { CreateCareerGoal } from './components/CreateCareerGoal';
 
 	function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
 
@@ -67,8 +69,42 @@
 		);
 	}
 
+function ProgressView({
+  page,
+  setPage,
+}: {
+  page: "home" | "progress";
+  setPage: React.Dispatch<React.SetStateAction<"home" | "progress">>;
+}) {
+const [goals, setGoals] = useState<{ title: string, category:"Job Application" |"Skill Development" |"Etc", description: string }[]>([]);
+
+
+  return (
+    <div>
+      <Stack gap="md">
+        <Text>Progress Tracker</Text>
+
+        <CreateCareerGoal
+          onAdd={(goal) => {setGoals((prev) => [...prev, goal])}}
+        />
+
+        <TableReviews data={goals} />
+
+        <Button onClick={() => setPage("home")}>
+          Back to Dashboard
+        </Button>
+      </Stack>
+    </div>
+  );
+}
+
+
+
 	//Adding props this time for user
 	function DashboardView({user}: {user: FirebaseUser}) {
+		const[page,setPage] = useState<"home" | "progress">("home")
+		
+
 		const SignOutMethod = () => {
 			signOut(auth);
 		}; //Sign out method
@@ -81,17 +117,28 @@
 			<Header />
 			<Space h="xl" />
 			<Container size="80%">
+				{page === "home" &&(
 				<Stack gap="md">
 					<Text>Hello your Email is: {user.email}</Text>
+
+					<Button onClick={() => setPage("progress")}>
+              		Go to Progress Tracker
+            		</Button>
 
 					{/*Add sign out button */}
 					<Button onClick={SignOutMethod} color="red">Sign out</Button>
 				</Stack>
+				)}
+
+				{page === "progress" &&(
+				<ProgressView page ={page} setPage = {setPage}/>
+				)}
 			</Container>
 			</div>
 		);
 
 	}
+
 
 
 	//I think the key thing wrong is something in here
@@ -101,6 +148,7 @@
 		const [CurrentUser, authLoading, authError] = useAuthState(auth);
 		//Signinwithgoogle I've ignored user cause I'm trying to handle it elsewhere
 		const [signInWithGoogle, ,SignInLoading, SignInError] = useSignInWithGoogle(auth);
+
 
 		//Show a loading screen
 		if(authLoading || SignInLoading) {
