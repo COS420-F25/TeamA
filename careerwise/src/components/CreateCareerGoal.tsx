@@ -31,7 +31,7 @@ export function CreateCareerGoal(
           label="Goal Name"
           placeholder="Add Name"
           value={goalName}
-          onChange={(event) => setGoalName(event.currentTarget.value)}
+          onChange={(event) => {setGoalName(event.currentTarget.value)}}
         />
 
         <Select
@@ -48,7 +48,7 @@ export function CreateCareerGoal(
 
         <Textarea label="Description" placeholder="Add Description" 
         value = {goalDescription}
-        onChange={(event) => setGoalDescription(event.currentTarget.value)}
+        onChange={(event) => {setGoalDescription(event.currentTarget.value)}}
         />
 
         <Button variant="default" onClick={handleSubmit}>
