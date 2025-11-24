@@ -135,7 +135,6 @@
 					<DashboardView user={CurrentUser} />
 				) : (
 					<LoginView signInWithGoogle={signInWithGoogle} />
-
 				)}
 			</MantineProvider>
 		)

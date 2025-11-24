@@ -1,50 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Question from './Question';
-import questionsData from '../../data/questions.json';
-import '../../styles/Questionnaire.css';
 
-interface QuestionType {
-  id: number;
-  question: string;
-  options: string[];
-}
-
-const Questionnaire: React.FC = () => {
-  const [answers, setAnswers] = useState<{ [key: number]: string }>({});
-
-  const handleSelect = (id: number, option: string) => {
-    setAnswers(prev => ({ ...prev, [id]: option }));
+describe('Question component', () => {
+  const sampleProps = {
+    question: 'What is your favorite color?',
+    options: ['Red', 'Blue', 'Green'],
+    selectedOption: null,
+    onSelect: jest.fn(),
   };
 
-  const handleSubmit = () => {
-    console.log(answers);
-    // send this to backend or use it for mentor matching
-  };
+  it('renders the question text', () => {
+    render(<Question {...sampleProps} />);
+    expect(screen.getByText('What is your favorite color?')).toBeInTheDocument();
+  });
 
-  return (
-    <>
-      {/* Header Ribbon */}
-      <div className="header-ribbon">
-        <span>CareerWise</span>
-        <button className="questionnaire-button">Questionnaire</button>
-      </div>
+  it('renders all provided options', () => {
+    render(<Question {...sampleProps} />);
+    sampleProps.options.forEach(option => {
+      expect(screen.getByLabelText(option)).toBeInTheDocument();
+    });
+  });
 
-      {/* Questionnaire Content */}
-      <div className="questionnaire-container">
-        <h2>CareerWise Job Interest Questionnaire</h2>
-        {questionsData.map((q: QuestionType) => (
-          <Question
-            key={q.id}
-            question={q.question}
-            options={q.options}
-            selectedOption={answers[q.id] || null}
-            onSelect={(option: string) => { handleSelect(q.id, option); }}
-          />
-        ))}
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-    </>
-  );
-};
-
-export default Questionnaire;
+  it('calls onSelect when an option is clicked', () => {
+    render(<Question {...sampleProps} />);
+    const optionInput = screen.getByLabelText('Blue');
+    fireEvent.click(optionInput);
+    expect(sampleProps.onSelect).toHaveBeenCalledWith('Blue');
+  });
+});

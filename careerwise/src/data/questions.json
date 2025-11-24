@@ -1,8 +1,5 @@
-{
-  "questionnaire": {
-    "title": "CareerWise Pre-Questionnaire",
-    "description": "This questionnaire helps us understand your career goals and preferences.",
-    "questions": [
+      [
+      
       {
         "id": 1,
         "question": "Which of the following computer science fields interests you the most?",
@@ -89,5 +86,5 @@
         "options": ["Technical Programming", "Assignment Breakdown and Organizational Skills", "Networking and Social Skills", "Job Search Strategy"]
       }
     ]
-  }
-}
+  
+
