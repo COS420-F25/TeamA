@@ -99,7 +99,6 @@ const [goals, setGoals] = useState<{ title: string, category:"Job Application" |
 }
 
 
-
 	//Adding props this time for user
 	function DashboardView({user}: {user: FirebaseUser}) {
 		const[page,setPage] = useState<"home" | "progress">("home")
