@@ -183,7 +183,6 @@ const [goals, setGoals] = useState<{ title: string, category:"Job Application" |
 					<DashboardView user={CurrentUser} />
 				) : (
 					<LoginView signInWithGoogle={signInWithGoogle} />
-
 				)}
 			</MantineProvider>
 		)
