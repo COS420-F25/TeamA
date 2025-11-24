@@ -1,0 +1,22 @@
+Title	URL	Status	Priority	Story Type	Estimate (Story Points)	Points Completed	Assignees	Contributors and % contribution	Quality Reviewer	Start date	End date (ready for QC by)	Deliverable / Sprint	Milestone
+As a user, I want an interface to enter my career goals and expectations for tracking within the application so that I can make my career search as fitting as possible.	https://github.com/COS420-F25/TeamA/issues/40	In Progress	High	Requirements	2		brendonprice			Nov 12, 2025	Nov 23, 2025	Deliverable 4	D4 Milestone
+As a user I want a progress tracker to track completed goals, mentor feedback, and other stats so that I can monitor my development over time. 	https://github.com/COS420-F25/TeamA/issues/38	In Progress	Medium	Requirements	2		AlexN-H			Nov 12, 2025	Nov 23, 2025	Deliverable 4	D4 Milestone
+Create UI Mockup for Progress Tracker	https://github.com/COS420-F25/TeamA/issues/124	Quality Checking					AlexN-H		Brady D	Nov 12, 2025	Nov 16, 2025	Deliverable 4	D4 Quality Checking Milestone
+Set up KanBan Roadmap for D4	https://github.com/COS420-F25/TeamA/issues/83	Done					bdube21, DeveauJoshua2002	Committing to this for D4	Brady D	Nov 12, 2025	Nov 12, 2025	Deliverable 4	D3 Quality Checking Milestone
+DCD Parts for Progress Tracker	https://github.com/COS420-F25/TeamA/issues/127	Done					AlexN-H		Brady D	Nov 12, 2025	Nov 19, 2025	Deliverable 4	D4 Quality Checking Milestone
+Integrate Detailed Design Diagram Parts	https://github.com/COS420-F25/TeamA/issues/111	Done					AlexN-H, bdube21, brendonprice, DeveauJoshua2002		Josh D	Nov 12, 2025	Nov 19, 2025	Deliverable 4	D4 Quality Checking Milestone
+Detailed Design Diagram Description	https://github.com/COS420-F25/TeamA/issues/112	Done					bdube21		Alex N-H	Nov 18, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Feature Table	https://github.com/COS420-F25/TeamA/issues/125	Done					bdube21		Josh D	Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Create Questions for Career Questionnaire	https://github.com/COS420-F25/TeamA/issues/113	Done					bdube21, brendonprice		Brady D	Nov 12, 2025	Nov 19, 2025	Deliverable 4	D4 Quality Checking Milestone
+Automated Tests for Questionnaire Feature (Using TDD)	https://github.com/COS420-F25/TeamA/issues/118	Done					brendonprice		Brady D	Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Sprint Review	https://github.com/COS420-F25/TeamA/issues/123	Done					AlexN-H, bdube21, brendonprice, DeveauJoshua2002			Nov 21, 2025	Nov 21, 2025	Deliverable 4	D4 Milestone
+DCD parts for Questionnaire	https://github.com/COS420-F25/TeamA/issues/126	Done					brendonprice		Brady D	Nov 12, 2025	Nov 19, 2025	Deliverable 4	D4 Quality Checking Milestone
+Addressing Domain Model Comments	https://github.com/COS420-F25/TeamA/issues/110	Todo / Sprint Backlog					bdube21		Brendon P	Nov 12, 2025	Nov 16, 2025	Deliverable 4	D4 Quality Checking Milestone
+Create Design Pattern	https://github.com/COS420-F25/TeamA/issues/114	Todo / Sprint Backlog					AlexN-H		Josh D	Nov 12, 2025	Nov 16, 2025	Deliverable 4	D4 Quality Checking Milestone
+Record D4 Progress Video	https://github.com/COS420-F25/TeamA/issues/115	Todo / Sprint Backlog					DeveauJoshua2002		Brady D	Nov 19, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Progress Tracker Frontend Implementation	https://github.com/COS420-F25/TeamA/issues/121	In Progress					AlexN-H			Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Questionnaire Frontend Implemenation	https://github.com/COS420-F25/TeamA/issues/117	In Progress					brendonprice		Brady D	Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Automated Tests for Progress Tracker Feature (Using TDD)	https://github.com/COS420-F25/TeamA/issues/122	In Progress					AlexN-H		Brady D	Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Respond to Comments on SRS	https://github.com/COS420-F25/TeamA/issues/119	Todo / Sprint Backlog							Brady D	Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Respond to Comments on Use Case Diagrams/ Models and Descriptions	https://github.com/COS420-F25/TeamA/issues/120	Todo / Sprint Backlog								Nov 12, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
+Design Pattern Description	https://github.com/COS420-F25/TeamA/issues/116	Todo / Sprint Backlog					DeveauJoshua2002		Alex N-H	Nov 16, 2025	Nov 21, 2025	Deliverable 4	D4 Quality Checking Milestone
