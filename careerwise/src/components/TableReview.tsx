@@ -1,8 +1,9 @@
 import { Anchor, Group, Progress, Table, Text } from '@mantine/core';
 import classes from './TableReviews.module.css';
+import React from "react";
 
 export type Goal = {
- title: string
+title: string
  category: "Job Application" |"Skill Development" |"Etc"
  description: string
 };

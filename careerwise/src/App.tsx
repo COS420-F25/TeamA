@@ -90,7 +90,7 @@ const [goals, setGoals] = useState<{ title: string, category:"Job Application" |
 
         <TableReviews data={goals} />
 
-        <Button onClick={() => setPage("home")}>
+        <Button onClick={() => {setPage("home")}}>
           Back to Dashboard
         </Button>
       </Stack>
@@ -121,7 +121,7 @@ const [goals, setGoals] = useState<{ title: string, category:"Job Application" |
 				<Stack gap="md">
 					<Text>Hello your Email is: {user.email}</Text>
 
-					<Button onClick={() => setPage("progress")}>
+					<Button onClick={() => {setPage("progress")}}>
               		Go to Progress Tracker
             		</Button>
 
