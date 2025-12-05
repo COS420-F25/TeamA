@@ -18,8 +18,7 @@
 	import { Header } from "./components/Header";
 	import { LoginForm } from "./components/LoginForm";
 	import { GoogleSigninButton } from "./components/GoogleSigninButton";
-	import { TableReviews } from "./components/TableReview";
-	import { CreateCareerGoal } from './components/CreateCareerGoal';
+	import { ProgressView } from "./ProgressView";
 
 	function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
 
@@ -68,37 +67,6 @@
 		</div>
 		);
 	}
-
-function ProgressView({
-  page,
-  setPage,
-}: {
-  page: "home" | "progress";
-  setPage: React.Dispatch<React.SetStateAction<"home" | "progress">>;
-}) {
-const [goals, setGoals] = useState<{ title: string, category:"Job Application" |"Skill Development" |"Etc", description: string }[]>([]);
-
-
-  return (
-    <div>
-      <Stack gap="md">
-        <Text>Progress Tracker</Text>
-
-        <CreateCareerGoal
-          onAdd={(goal) => {setGoals((prev) => [...prev, goal])}}
-        />
-
-        <TableReviews data={goals} />
-
-        <Button onClick={() => {setPage("home")}}>
-          Back to Dashboard
-        </Button>
-      </Stack>
-    </div>
-  );
-}
-
-
 
 	//Adding props this time for user
 	function DashboardView({user}: {user: FirebaseUser}) {
