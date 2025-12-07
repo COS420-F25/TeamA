@@ -17,7 +17,7 @@ export type Schedule = {
  */
 export function getDates(schedule: Schedule): Date[] {
 	const datesList: Date[] = Object.keys(schedule).map((datestr: string): Date => {
-		const [month, day, year] = datestr.split('-').map(Number);
+		const [year, month, day] = datestr.split('-').map(Number);
 		return new Date(year, month - 1, day); // month is 0-indexed
 	});
 	return datesList.sort((a, b) => a.getTime() - b.getTime());

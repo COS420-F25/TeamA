@@ -11,7 +11,7 @@ import userEvent from '@testing-library/user-event';
 
 const testSchedule = 
 {
-	"11-23-2025": [
+	"2025-11-23": [
 		{
 			startTime: "10:00 AM",
 			endTime: "10:20 AM",
@@ -24,7 +24,7 @@ const testSchedule =
 		},
 
 	],
-	"11-24-2025": [
+	"2025-11-24": [
 		{
 			startTime: "11:00 AM",
 			endTime: "12:00 PM",
