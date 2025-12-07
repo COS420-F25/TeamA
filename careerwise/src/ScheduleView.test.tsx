@@ -58,32 +58,33 @@ describe("ScheduleView Component Tests", () => {
 
 	/* Test that the view is correct for the schedule under test */
 	test ("The 23rd and 24th are present on the calendar", () => {
-		const day1 = screen.queryByRole("button", {name: "23"});
-		const day2 = screen.queryByRole("button", {name: "24"});
-		expect(day1).toBeInTheDocument;
-		expect(day2).toBeInTheDocument;
+		const day1 = screen.getByRole("button", { name: /^23 November/ });
+		const day2 = screen.getByRole("button", { name: /^24 November/ });
+
+		expect(day1).toBeInTheDocument();
+		expect(day2).toBeInTheDocument();
 	});
 
 	test ("The 23rd is clickable on the calendar", () => {
-		const day = screen.getByLabelText("23");
+		const day = screen.getByRole("button", { name: /^23 November/ });
 		expect(day).not.toBeDisabled();
 	});
 
 	test ("The 24th is not clickable on the calendar", () => {
-		const day = screen.getByLabelText("24");
+		const day = screen.getByRole("button", { name: /^24 November/ });
 		expect(day).toBeDisabled();
 	});
 
 	/* Test click actions */
 	test ("Click the 23rd, 10:30 AM is shown", () => {
-		const day = screen.getByLabelText("23");
+		const day = screen.getByRole("button", { name: /^23 November/ });
 		userEvent.click(day);
 		const timeShown = screen.getByLabelText(/10:30 AM/i);
 		expect(timeShown).toBeInTheDocument();
 	});
 
 	test ("Click the 23rd again, 10:30 AM is hidden", () => {
-		const day = screen.getByLabelText("23");
+		const day = screen.getByRole("button", { name: /^23 November/ });
 		userEvent.click(day);
 		userEvent.click(day);
 		const timeShown = screen.queryByLabelText(/10:30 AM/i);
@@ -91,7 +92,7 @@ describe("ScheduleView Component Tests", () => {
 	});
 
 	test ("Click the 23rd, click 10:30 AM, 'Request Meeting' button enables", () => {
-		const day = screen.getByLabelText("23");
+		const day = screen.getByRole("button", { name: /^23 November/ });
 		userEvent.click(day);
 		const timeShown = screen.getByLabelText(/10:30 AM/i);
 		userEvent.click(timeShown);
