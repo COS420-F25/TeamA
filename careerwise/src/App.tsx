@@ -102,31 +102,58 @@
 			</Container>
 			</div>
 		);
+
 	}
 
-	//Show error screen if there's an auth or sign in error
-	const combinedError = SignInError || authError;
-	if(combinedError) {
+
+
+	//I think the key thing wrong is something in here
+	function App() {
+
+		//Get current user and authentication state
+		const [CurrentUser, authLoading, authError] = useAuthState(auth);
+		//Signinwithgoogle I've ignored user cause I'm trying to handle it elsewhere
+		const [signInWithGoogle, ,SignInLoading, SignInError] = useSignInWithGoogle(auth);
+
+
+		//Show a loading screen
+		if(authLoading || SignInLoading) {
+			return (
+				//Add MantineProvider here
+				<MantineProvider theme={careerWiseTheme}>
+					<Container size="80%" mt="xl">
+						{/*Add loading page */}
+						<Text ta="center" size="xl">Loading....</Text>
+					</Container>
+				</MantineProvider>
+			);
+		}
+
+		//Show error screen if there's an auth or sign in error
+		const combinedError = SignInError || authError;
+		if(combinedError) {
+			return (
+				<MantineProvider theme={careerWiseTheme}>
+					<Container size="80%" mt="xl">
+						{/*Add error page */}
+						<Text ta="center" size="xl">Error: {combinedError.message}</Text>
+					</Container>
+				</MantineProvider>
+			);
+		}
+
 		return (
+			//Conditional show dashboard if the user is authenticated else do the login view.
 			<MantineProvider theme={careerWiseTheme}>
-				<Container size="80%" mt="xl">
-					{/*Add error page */}
-					<Text ta="center" size="xl">Error: {combinedError.message}</Text>
-				</Container>
+				{CurrentUser ? (
+					<DashboardView user={CurrentUser} />
+				) : (
+					<LoginView signInWithGoogle={signInWithGoogle} />
+
+				)}
 			</MantineProvider>
-		);
+		)
+
 	}
 
-	return (
-		//Conditional show dashboard if the user is authenticated else do the login view.
-		<MantineProvider theme={careerWiseTheme}>
-			{CurrentUser ? (
-				<DashboardView user={CurrentUser} />
-			) : (
-				<LoginView signInWithGoogle={signInWithGoogle} />
-			)}
-		</MantineProvider>
-	)
-}
-
-export default App;
+	export default App;
