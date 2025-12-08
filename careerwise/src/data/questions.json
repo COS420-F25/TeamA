@@ -1,0 +1,90 @@
+      [
+      
+      {
+        "id": 1,
+        "question": "Which of the following computer science fields interests you the most?",
+        "options": ["Web Development", "Data Science", "Cybersecurity", "Artificial Intelligence"]
+      },
+      {
+        "id": 2,
+        "question": "Which of the following roles would you be most interested in?",
+        "options": ["Software Engineer", "Data Analyst", "Security Systems Specialist", "UX Designer"]
+      },
+      {
+        "id": 3,
+        "question": "Which programming language do you prefer?",
+        "options": ["JavaScript", "Python", "Java", "C++"]
+      },
+      {
+        "id": 4,
+        "question": "Which tool or platform do you prefer using?",
+        "options": ["React", "Unity", "AWS", "TensorFlow"]
+      },
+      {
+        "id": 5,
+        "question": "Which type of project would excite you the most?",
+        "options": ["Mobile Apps", "Web Platforms", "Data Pipelines", "Security Audits"]
+      },
+      {
+        "id": 6,
+        "question": "In which industry would you like to pursue technology?",
+        "options": ["Finance", "Healthcare", "Education", "Entertainment"]
+      },
+      {
+        "id": 7,
+        "question": "What type of company would you prefer to work for?",
+        "options": ["Startup", "Large Tech Corporation", "Government Agency", "Nonprofit"]
+      },
+      {
+        "id": 8,
+        "question": "What is your preferred company culture?",
+        "options": ["Fast-Paced Independent", "Individual but Structured", "Mission Driven", "Creative"]
+      },
+      {
+        "id": 9,
+        "question": "Which work environment suits you best?",
+        "options": ["Remote", "Hybrid", "In-Office", "I Am Fairly Flexible"]
+      },
+      {
+        "id": 10,
+        "question": "What kind of team do you thrive in?",
+        "options": ["Smaller but Closely Involved", "Large with Divided Work Aspects", "Remote Regularly Meeting Team", "Mentor-Led Team"]
+      },
+      {
+        "id": 11,
+        "question": "In a group setting, how do you like to collaborate?",
+        "options": ["Pair Programming", "Independent Work", "Agile Teams", "Cross-Functional Groups"]
+      },
+      {
+        "id": 12,
+        "question": "What motivates you the most within a job?",
+        "options": ["Solving Complex Problems", "Helping Others on a Project", "Building Software Products and Models", "Learning or Testing New Technology"]
+      },
+      {
+        "id": 13,
+        "question": "What kind of impact do you want to make on society or within a company?",
+        "options": ["Innovate New Technology", "Improve the Lives of People", "Secure Systems and Protect Data", "Educate Others on Computer Science Principles"]
+      },
+      {
+        "id": 14,
+        "question": "What is your current biggest career goal?",
+        "options": ["Landing My First Job", "Switching Fields", "Finding a Unique Job to Build My Resume for Future Jobs", "I Am Not Sure and Need a Mentor to Help Me Decide"]
+      },
+      {
+        "id": 15,
+        "question": "Which job search challenge do you face the most?",
+        "options": ["Lack of Experience", "Unclear Direction in Application", "Limited Social Network", "Interview Anxiety"]
+      },
+      {
+        "id": 16,
+        "question": "What kind of mentorship feels best fit for you?",
+        "options": ["Technical Coaching", "Interview Prep", "Portfolio Review", "Organization of Application Requirements"]
+      },
+      {
+        "id": 17,
+        "question": "Which area of your technical ability would you like to improve the most?",
+        "options": ["Technical Programming", "Assignment Breakdown and Organizational Skills", "Networking and Social Skills", "Job Search Strategy"]
+      }
+    ]
+  
+
