@@ -1,58 +1,108 @@
-import { Anchor, Group, Progress, Table, Text } from '@mantine/core';
+import { Anchor, Group, List, Progress, Table, Text, TextInput } from '@mantine/core';
 import classes from './TableReviews.module.css';
-import React from "react";
-
-export type Goal = {
-title: string
- category: "Job Application" |"Skill Development" |"Etc"
- description: string
-};
+import { CreateCareerGoal, handleMilestoneClick, Comment, Goal, Milestone } from './CreateCareerGoal';
+import React, { useState } from 'react';
 
 interface TableReviewProps{
   data: Goal[];
+  milestones?: Milestone[];
+  comments?: Comment[];
+  handleAddComment?: (comment: Comment) => void;
 }
 
-export function TableReviews({data}: TableReviewProps) {
+function CommentInput({ 
+  goalTitle, 
+  onAddComment 
+}: { 
+  goalTitle: string; 
+  onAddComment?: (comment: Comment) => void;
+}) {
+  const [commentText, setCommentText] = useState<string>("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (commentText.trim() && onAddComment) {
+      onAddComment({
+        text: commentText,
+        GoalTitle: goalTitle
+      });
+      setCommentText("");
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextInput
+        value={commentText}
+        onChange={(event) => {setCommentText(event.currentTarget.value)}}
+        placeholder="Add a comment..."
+        size="sm"
+      />
+    </form>
+  );
+}
+
+export function TableReviews({data, milestones = [], comments = [], handleAddComment}: TableReviewProps) {
   const rows = data.map((row) => {
-    // const totalReviews = row.reviews.negative + row.reviews.positive;
-    // const positiveReviews = (row.reviews.positive / totalReviews) * 100;
-    // const negativeReviews = (row.reviews.negative / totalReviews) * 100;
+    // Filter milestones for this specific goal
+    const goalMilestones = milestones.filter(m => m.goalTitle === row.title);
+    
+    // Calculate milestone progress (percentage of completed milestones)
+    const completedCount = goalMilestones.filter(m => m.completed).length;
+    const milestoneProgress = goalMilestones.length > 0 
+      ? (completedCount / goalMilestones.length) * 100 
+      : 0;
+
+    // Get comments for this specific goal
+    const goalComments = comments.filter(c => c.GoalTitle === row.title);
 
     return (
       <Table.Tr key={row.title}>
-        <Table.Td>
-          <Anchor component="button" fz="sm">
-            {row.title}
-          </Anchor>
-        </Table.Td>
+        <Table.Td>{row.title}</Table.Td>
         <Table.Td>{row.category}</Table.Td>
-        <Table.Td>
-            {row.description}
-        </Table.Td>
-        {/* <Table.Td>{Intl.NumberFormat().format(totalReviews)}</Table.Td> */}
-        <Table.Td>
-          <Group justify="space-between">
-            {/* <Text fz="xs" c="teal" fw={700}>
-              {positiveReviews.toFixed(0)}%
-            </Text> */}
-            {/* <Text fz="xs" c="red" fw={700}>
-              {negativeReviews.toFixed(0)}%
-            </Text> */}
-          </Group>
-          {/* <Progress.Root>
-            <Progress.Section
-              className={classes.progressSection}
-              value={positiveReviews}
-              color="teal"
-            />
+        <Table.Td>{row.description}</Table.Td>
 
-            <Progress.Section
-              className={classes.progressSection}
-              value={negativeReviews}
-              color="red"
-            />
-          </Progress.Root> */}
+        <Table.Td>
+          {goalMilestones.length > 0 ? (
+            <List size="sm">
+              {goalMilestones.map((milestone) => (
+                <List.Item  key={milestone.title}>{handleMilestoneClick(milestone)} </List.Item>
+              ))}
+            </List>
+          ) : (
+            <Text fz="xs" c="dimmed">No milestones</Text>
+          )}
         </Table.Td>
+        
+        <Table.Td>
+          <Text fz="sm" fw={500}>
+            {milestoneProgress.toFixed(0)}%
+          </Text>
+          <Progress value={milestoneProgress} size="sm" mt="xs" />
+        </Table.Td>
+        
+
+        {/* <Table.Td>
+          <Text fz="sm" fw={500}>
+            {row.goalpercentage}%
+          </Text>
+          <Progress value={row.goalpercentage} size="sm" mt="xs" />
+        </Table.Td> */}
+
+        <Table.Td>
+          <CommentInput 
+            goalTitle={row.title} 
+            onAddComment={handleAddComment}
+          />
+          {goalComments.length > 0 && (
+            <List size="sm" mt="xs">
+              {goalComments.map((comment, idx) => (
+                <List.Item key={idx}>{comment.text}</List.Item>
+              ))}
+            </List>
+          )}
+        </Table.Td>
+
       </Table.Tr>
     );
   });
@@ -68,6 +118,7 @@ export function TableReviews({data}: TableReviewProps) {
             <Table.Th>Milestones</Table.Th>
             <Table.Th>Milestone Progress</Table.Th>
              <Table.Th>Overall Progress</Table.Th>
+             <Table.Th>Comments</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
