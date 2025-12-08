@@ -99,7 +99,7 @@
 				)}
 
 				{page === "progress" &&(
-				<ProgressView page ={page} setPage = {setPage}/>
+				<ProgressView page={page} setPage={setPage}/>
 				)}
 			</Container>
 			</div>

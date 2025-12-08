@@ -17,7 +17,7 @@
 
 import React, { useState } from 'react';
 import { Stack, Text, Button } from '@mantine/core';
-import { CreateCareerGoal, Goal, Milestone } from './components/CreateCareerGoal';
+import { CreateCareerGoal, Goal, Milestone, Comment } from './components/CreateCareerGoal';
 import { TableReviews } from './components/TableReview';
 
 export function ProgressView({
@@ -29,6 +29,12 @@ export function ProgressView({
 }) {
   const [goals, setGoals] = useState<Goal[]>([]);
   const [milestones, setMilestones] = useState<Milestone[]>([]);
+  const [comments, setComments] = useState<Comment[]>([]);
+
+  // Handles adding a new comment to the comments state
+  const handleAddComment = (comment: Comment) => {
+    setComments((prev) => [...prev, comment]);
+  };
 
   const handleAddMilestone = (milestone: Milestone) => {
     setMilestones((prev) => [...prev, milestone]);
@@ -45,7 +51,12 @@ export function ProgressView({
           existingGoals={goals}
         />
 
-        <TableReviews data={goals} milestones={milestones} />
+        <TableReviews 
+          data={goals} 
+          milestones={milestones} 
+          comments={comments}
+          handleAddComment={handleAddComment}
+        />
 
         <Button onClick={() => {setPage("home")}}>
           Back to Dashboard
