@@ -89,9 +89,7 @@
 				<Stack gap="md">
 					<Text>Hello your Email is: {user.email}</Text>
 
-					<Button onClick={() => {setPage("progress")}}>
-              		Go to Progress Tracker
-            		</Button>
+					<Button onClick={() => {setPage("progress")}}>Go to Progress Tracker</Button>
 
 					{/*Add sign out button */}
 					<Button onClick={SignOutMethod} color="red">Sign out</Button>
