@@ -1,22 +1,7 @@
 import { Anchor, Group, List, Progress, Table, Text, TextInput } from '@mantine/core';
 import classes from './TableReviews.module.css';
-import { CreateCareerGoal, handleMilestoneClick, Comment,  } from './CreateCareerGoal';
+import { CreateCareerGoal, handleMilestoneClick, Comment, Goal, Milestone } from './CreateCareerGoal';
 import React, { useState } from 'react';
-
-
-export type Goal = {
-title: string
- category: "Job Application" |"Skill Development" |"Etc"
- description: string
- goalpercentage: number
-};
-
-export type Milestone = {
-  title: string;
-  description: string;
-  goalTitle: string;
-  completed: boolean;
-};
 
 interface TableReviewProps{
   data: Goal[];
