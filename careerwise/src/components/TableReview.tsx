@@ -49,7 +49,7 @@ function CommentInput({
     <form onSubmit={handleSubmit}>
       <TextInput
         value={commentText}
-        onChange={(event) => setCommentText(event.currentTarget.value)}
+        onChange={(event) => {setCommentText(event.currentTarget.value)}}
         placeholder="Add a comment..."
         size="sm"
       />
