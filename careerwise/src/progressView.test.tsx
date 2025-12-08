@@ -43,7 +43,6 @@ describe('ProgressView Component', () => {
               title: `Test Goal ${goalCounter}`,
               category: 'Job Application',
               description: 'Test Description',
-              goalpercentage: 0,
             });
           }}
         >
@@ -143,7 +142,6 @@ describe('ProgressView Component', () => {
       title: 'Test Goal 1',
       category: 'Job Application',
       description: 'Test Description',
-      goalpercentage: 0,
     });
   });
 

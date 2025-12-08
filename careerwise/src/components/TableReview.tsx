@@ -82,12 +82,12 @@ export function TableReviews({data, milestones = [], comments = [], handleAddCom
         </Table.Td>
         
 
-        <Table.Td>
+        {/* <Table.Td>
           <Text fz="sm" fw={500}>
             {row.goalpercentage}%
           </Text>
           <Progress value={row.goalpercentage} size="sm" mt="xs" />
-        </Table.Td>
+        </Table.Td> */}
 
         <Table.Td>
           <CommentInput 

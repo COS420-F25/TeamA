@@ -6,7 +6,6 @@ export type Goal = {
   title: string;
   category: "Job Application" | "Skill Development" | "Etc";
   description: string;
-  goalpercentage: number;
 };
 
 export type Milestone = {
@@ -60,7 +59,6 @@ export function CreateCareerGoal(
       title: goalName,
       category: goalCategory,
       description: goalDescription,
-      goalpercentage: 0
     });
     // Reset form
     setGoalName("");
