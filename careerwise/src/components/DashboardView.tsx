@@ -10,6 +10,8 @@ interface DashboardViewProps {
 	user: FirebaseUser;
 }
 
+/*Beginning */
+
 export function DashboardView({ user }: DashboardViewProps) {
 	const [page, setPage] = useState<"home" | "progress">("home");
 
