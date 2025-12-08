@@ -3,16 +3,16 @@
  * COS 420 Team A
  */
 
-import React from "react";
+import React, { useState } from "react";
 
 /* Import Mantine Components */
-import { Button, useMantineTheme } from "@mantine/core";
-import { DatePicker } from "@mantine/dates";
+import { Button, useMantineTheme, Text} from "@mantine/core";
+import { DatePicker, TimeGrid, TimeValue } from "@mantine/dates";
 import "@mantine/core/styles.css"
 import "@mantine/dates/styles.css"
 
 /* Import schedule utilities */
-import { Schedule } from "./schedule";
+import { getAvailableMeetingStartTimes, getMeeting, getMeetingsFromDate, Meeting, Schedule } from "./schedule";
 import { getDates } from "./schedule";
 
 interface ScheduleViewProps {
@@ -28,7 +28,7 @@ function makeExcludeDates(schedule: Schedule): (date: string) => boolean {
 	const allowedStrSet = new Set(
 		/* Filter out dates where there are no available meetings */
 		Object.keys(schedule).filter((datestr: string): boolean => {
-			return schedule[datestr].some(slot => slot.available);
+			return schedule[datestr].some((meeting) => meeting.available);
 		})
 	);
 	/* Return callback function */
@@ -38,9 +38,46 @@ function makeExcludeDates(schedule: Schedule): (date: string) => boolean {
 }
 
 export function ScheduleView({ schedule }: ScheduleViewProps): React.JSX.Element {
-
 	useMantineTheme();
+
+	/* Use states for:
+	 *  - "Request Meeting" button visibility
+	 *  - Calendar date value
+	 *  - Time Grid data
+	 *  - Time (selected)
+	 *  - Meeting (selected)
+	 */
+	const [reqMeetingVisible, setReqMeetingVisible] = useState<boolean>(false);
+	const [date, setDate] = useState<string | null>(null);
+	const [timeGridData, setTimeGridData] = useState<string[]>([]);
+	const [time, setTime] = useState<string | null>(null);
+	const [meeting, setMeeting] = useState<Meeting | null>(null);
+
+
+	/* Helper function to handle the newly picked date from the calendar */
+	function updateDatePicked(date: (string | null)): void {
+		setDate(date);
+		setMeeting(null);
+		setTime(null);
+		/* If the date was changed, update the times in the time grid */
+		const meetings = getMeetingsFromDate(schedule, date);
+		const startTimes = getAvailableMeetingStartTimes(meetings)
+		setTimeGridData(startTimes);
+	}
 	
+	/* Helper function to handle the newly picked time from the grid */
+	function updateMeetingPicked(time: (string | null)): void {
+		setTime(time);
+		setMeeting(getMeeting(schedule, date, time));
+		/* If the time was changed, update the request meeting button
+		 * visibility
+		 */
+		if (time) {
+			setReqMeetingVisible(true);
+			return;
+		}
+		setReqMeetingVisible(false);
+	}
 	/* Get the list of Date objects from the schedule */
 	const dateList: Date[] = getDates(schedule);
 
@@ -49,9 +86,25 @@ export function ScheduleView({ schedule }: ScheduleViewProps): React.JSX.Element
 		<DatePicker 
 			defaultDate={dateList[0]}
 			excludeDate={makeExcludeDates(schedule)}
+			onChange={updateDatePicked}
+			allowDeselect={true}
+		/>
+
+		{/* Time grid for selecting a meeting slot */}
+		<TimeGrid 
+			data={timeGridData}
+			allowDeselect={true}
+			onChange={updateMeetingPicked}
+			value={time}
+			format="12h"
 		/>
 
 		{/* Request Meeting Button */}
-		<Button disabled={true}>Request Meeting</Button>
+		{reqMeetingVisible && meeting && <Text>
+			Selected Meeting:&nbsp;
+			<TimeValue value={meeting.startTime} format="12h" /> -&nbsp; 
+			<TimeValue value={meeting.endTime} format="12h" />
+		</Text>}
+		<Button disabled={!reqMeetingVisible}>Request Meeting</Button>
 	</div>
 }
