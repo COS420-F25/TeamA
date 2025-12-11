@@ -8,70 +8,78 @@ import { GoogleSigninButton } from './GoogleSigninButton';
 /* Test the LoginForm component */
 describe("LoginForm Component Tests", () => {
 
-	beforeEach(() => {
-		render(
-			<MantineProvider>
-			<LoginForm />
-			</MantineProvider>
-		);
-	});
+  beforeEach(() => {
+    render(
+      <MantineProvider>
+        <LoginForm />
+      </MantineProvider>
+    );
+  });
 
-	/* Test if fields are present */
-	test("'Email' input field is present", () => {
-		const emailField = screen.getByPlaceholderText(/e-?mail/i);
-		expect(emailField).toBeInTheDocument();
-	});
+  /* Test if fields are present */
+  test("'Email' input field is present", () => {
+    const emailField = screen.getByPlaceholderText(/e-?mail/i);
+    expect(emailField).toBeInTheDocument();
+  });
 
-	test("'Password' password input field is present", () => {
-		const passwordField = screen.getByPlaceholderText(/password/i);
-		expect(passwordField).toBeInTheDocument();
-		expect(passwordField).toHaveAttribute("type", "password");
-	});
+  test("'Password' password input field is present", () => {
+    const passwordField = screen.getByPlaceholderText(/password/i);
+    expect(passwordField).toBeInTheDocument();
+    expect(passwordField).toHaveAttribute("type", "password");
+  });
 
-	test('Text is enterable into email field', () => {
-		const emailField = screen.getByPlaceholderText(/e-?mail/i);
-		const testStr = "testemail"
-		userEvent.type(emailField, testStr);
-		expect(emailField).toHaveValue(testStr);
-	});
+  test('Text is enterable into email field', async () => {
+    const emailField = screen.getByPlaceholderText(/e-?mail/i);
+    const testStr = "testemail";
 
-		test('Text is enterable into password field', () => {
-		const passwordField = screen.getByPlaceholderText(/password/i);
-		const testStr = "testpass"
-		userEvent.type(passwordField, testStr);
-		expect(passwordField).toHaveValue(testStr);
-	});
+    const user = userEvent.setup();
+    await user.type(emailField, testStr);
+
+    expect(emailField).toHaveValue(testStr);
+  });
+
+  test('Text is enterable into password field', async () => {
+    const passwordField = screen.getByPlaceholderText(/password/i);
+    const testStr = "testpass";
+
+    const user = userEvent.setup();
+    await user.type(passwordField, testStr);
+
+    expect(passwordField).toHaveValue(testStr);
+  });
 });
 
 /* Test the Google Sign in button component */
 describe("GoogleSigninButton Component Tests", () => {
 
-	/* Dummy on click callback */
-	const onClickTest = jest.fn();
+  /* Dummy on click callback */
+  const onClickTest = jest.fn();
 
-	beforeEach(() => {
-		render(
-			<MantineProvider>
-			<GoogleSigninButton onclick={onClickTest}/>
-			</MantineProvider>
-		);
-	});
+  beforeEach(() => {
+    render(
+      <MantineProvider>
+        <GoogleSigninButton onclick={onClickTest}/>
+      </MantineProvider>
+    );
+  });
 
-	/* Test if Google Sign in is present */
-	test("Google 'Sign in' Button is present", () => {
-		const googleButton = screen.getByRole("button", {
-			name: /sign in with google/i
-		});
-		expect(googleButton).toBeInTheDocument();
-	});
+  /* Test if Google Sign in is present */
+  test("Google 'Sign in' Button is present", () => {
+    const googleButton = screen.getByRole("button", {
+      name: /sign in with google/i
+    });
+    expect(googleButton).toBeInTheDocument();
+  });
 
-	/* Test that the on click callback works */
-	test("Google 'Sign in' Button click is functional ", () => {
-		const googleButton = screen.getByRole("button", {
-			name: /sign in with google/i
-		});
-		userEvent.click(googleButton);
-		expect(onClickTest).toHaveBeenCalled();
-	});
+  /* Test that the on click callback works */
+  test("Google 'Sign in' Button click is functional ", async () => {
+    const googleButton = screen.getByRole("button", {
+      name: /sign in with google/i
+    });
+
+    const user = userEvent.setup();
+    await user.click(googleButton);
+
+    expect(onClickTest).toHaveBeenCalled();
+  });
 });
-
