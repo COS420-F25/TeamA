@@ -6,8 +6,8 @@ import { CreateCareerGoal } from './CreateCareerGoal';
 import { TableReviews } from './TableReview';
 
 // Mock the child components
-jest.mock('./components/CreateCareerGoal');
-jest.mock('./components/TableReview');
+jest.mock('./CreateCareerGoal');
+jest.mock('./TableReview');
 
 const MockedCreateCareerGoal = CreateCareerGoal as jest.MockedFunction<typeof CreateCareerGoal>;
 const MockedTableReviews = TableReviews as jest.MockedFunction<typeof TableReviews>;
