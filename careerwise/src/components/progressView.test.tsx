@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MantineProvider } from '@mantine/core';
 import { ProgressView } from './ProgressView';
-import { CreateCareerGoal } from './components/CreateCareerGoal';
-import { TableReviews } from './components/TableReview';
+import { CreateCareerGoal } from './CreateCareerGoal';
+import { TableReviews } from './TableReview';
 
 // Mock the child components
 jest.mock('./components/CreateCareerGoal');

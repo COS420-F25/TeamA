@@ -18,7 +18,7 @@
 	import { Header } from "./components/Header";
 	import { LoginForm } from "./components/LoginForm";
 	import { GoogleSigninButton } from "./components/GoogleSigninButton";
-	import { ProgressView } from "./ProgressView";
+	import { ProgressView } from "./components/ProgressView";
 
 	function LoginView({signInWithGoogle}: {signInWithGoogle: () => void }) { //Now Login View accepts props from App the source of login.
 

@@ -36,7 +36,7 @@ export function DashboardView({ user }: DashboardViewProps) {
 				)}
 
 				{page === "progress" && (
-					<ProgressView onBackToDashboard={() => {setPage("home")}} />
+					<ProgressView page={page} setPage={setPage} />
 				)}
 			</Container>
 		</div>
