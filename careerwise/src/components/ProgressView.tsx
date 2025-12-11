@@ -8,7 +8,7 @@ interface ProgressViewProps {
 }
 
 export function ProgressView({ onBackToDashboard }: ProgressViewProps) {
-	const [goals, setGoals] = useState<{ title: string, category:"Job Application" |"Skill Development" |"Etc", description: string }[]>([]);
+	const [goals, setGoals] = useState<{ title: string, category:"Job Application" |"Skill Development" |"Etc", description: string, completed?: boolean  }[]>([]);
 
 	return (
 		<div>

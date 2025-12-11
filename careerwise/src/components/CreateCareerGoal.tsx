@@ -1,11 +1,12 @@
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, Button, Textarea, Select, TextInput, Stack, Group, Text } from '@mantine/core';
+import { Modal, Button, Textarea, Select, TextInput, Stack, Group, Text, Checkbox } from '@mantine/core';
 import React, { useState } from 'react';
 
 export type Goal = {
   title: string;
   category: "Job Application" | "Skill Development" | "Etc";
   description: string;
+  completed?: boolean;
 };
 
 export type Milestone = {
@@ -48,6 +49,7 @@ export function CreateCareerGoal(
   const [goalName, setGoalName] = useState<string>("");
   const [goalCategory, setGoalCategory] = useState<"Job Application" |"Skill Development" |"Etc">("Etc");
   const [goalDescription, setGoalDescription] = useState<string>("");
+  const [goalCompleted, setGoalCompleted] = useState<boolean>(false);
   
   // Milestone form state
   const [milestoneName, setMilestoneName] = useState<string>("");
@@ -59,11 +61,13 @@ export function CreateCareerGoal(
       title: goalName,
       category: goalCategory,
       description: goalDescription,
+      completed: goalCompleted,
     });
     // Reset form
     setGoalName("");
     setGoalCategory("Etc");
     setGoalDescription("");
+    setGoalCompleted(false);
     closeGoalModal();
   };
 
@@ -121,6 +125,12 @@ export function CreateCareerGoal(
             onChange={(event) => {setGoalDescription(event.currentTarget.value)}}
           />
 
+          <Checkbox
+            label="Mark goal as completed"
+            checked={goalCompleted}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => { setGoalCompleted(event.currentTarget.checked); }}
+          />
+
           <Group justify="flex-end" mt="md">
             <Button variant="default" onClick={handleGoalSubmit}>
               Add Career Goal
@@ -173,12 +183,14 @@ export function CreateCareerGoal(
         </Stack>
       </Modal>
 
-      <Button variant="default" onClick={openGoalModal}>
-        Create Career Goal
-      </Button>
-      <Button variant="default" onClick={handleCreateMilestoneClick}>
-        Create Milestone
-      </Button>
+      <Group gap="sm" align="center">
+        <Button variant="default" onClick={openGoalModal}>
+          Create Career Goal
+        </Button>
+        <Button variant="default" onClick={handleCreateMilestoneClick}>
+          Create Milestone
+        </Button>
+      </Group>
     </>
   );
 }

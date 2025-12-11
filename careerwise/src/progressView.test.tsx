@@ -43,6 +43,7 @@ describe('ProgressView Component', () => {
               title: `Test Goal ${goalCounter}`,
               category: 'Job Application',
               description: 'Test Description',
+              completed: false
             });
           }}
         >

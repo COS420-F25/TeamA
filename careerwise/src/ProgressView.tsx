@@ -40,6 +40,47 @@ export function ProgressView({
     setMilestones((prev) => [...prev, milestone]);
   };
 
+  const handleUpdateGoal = (updatedGoal: Goal, originalTitle: string) => {
+    setGoals((prev) =>
+      prev.map((goal) => (goal.title === originalTitle ? { ...goal, ...updatedGoal } : goal))
+    );
+    // Also update milestones/comments that reference the goal title if it changed
+    if (updatedGoal.title !== originalTitle) {
+      setMilestones((prev) =>
+        prev.map((milestone) =>
+          milestone.goalTitle === originalTitle ? { ...milestone, goalTitle: updatedGoal.title } : milestone
+        )
+      );
+      setComments((prev) =>
+        prev.map((comment) =>
+          comment.GoalTitle === originalTitle ? { ...comment, GoalTitle: updatedGoal.title } : comment
+        )
+      );
+    }
+  };
+
+  const handleDeleteGoal = (title: string) => {
+    setGoals((prev) => prev.filter((goal) => goal.title !== title));
+    setMilestones((prev) => prev.filter((milestone) => milestone.goalTitle !== title));
+    setComments((prev) => prev.filter((comment) => comment.GoalTitle !== title));
+  };
+
+  const handleUpdateMilestone = (updatedMilestone: Milestone, originalTitle: string) => {
+    setMilestones((prev) =>
+      prev.map((milestone) =>
+        milestone.title === originalTitle && milestone.goalTitle === updatedMilestone.goalTitle
+          ? { ...milestone, ...updatedMilestone }
+          : milestone
+      )
+    );
+  };
+
+  const handleDeleteMilestone = (goalTitle: string, milestoneTitle: string) => {
+    setMilestones((prev) =>
+      prev.filter((milestone) => !(milestone.goalTitle === goalTitle && milestone.title === milestoneTitle))
+    );
+  };
+
   return (
     <div>
       <Stack gap="md">
@@ -56,6 +97,10 @@ export function ProgressView({
           milestones={milestones} 
           comments={comments}
           handleAddComment={handleAddComment}
+          onUpdateGoal={handleUpdateGoal}
+          onDeleteGoal={handleDeleteGoal}
+          onUpdateMilestone={handleUpdateMilestone}
+          onDeleteMilestone={handleDeleteMilestone}
         />
 
         <Button onClick={() => {setPage("home")}}>
