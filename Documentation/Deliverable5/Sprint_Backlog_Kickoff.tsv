@@ -1,0 +1,21 @@
+Title	URL	Status	Priority	Story Type	Estimate (Story Points)	Points Completed	Assignees	Contributors and % contribution	Quality Reviewer	Start date	End date (ready for QC by)	Deliverable / Sprint	Milestone
+As a user, I want to schedule virtual meetings with my mentor through the website so that I can get real-time and spoken advice.	https://github.com/COS420-F25/TeamA/issues/101	Todo / Sprint Backlog	High	Requirements	1		bdube21			Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Automated Tests for Progress Tracker Feature (Using TDD)	https://github.com/COS420-F25/TeamA/issues/122	Todo / Sprint Backlog					AlexN-H		Brady D	Nov 12, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Addressing Domain Model Comments	https://github.com/COS420-F25/TeamA/issues/110	Todo / Sprint Backlog					bdube21		Brendon P	Nov 12, 2025	Nov 16, 2025	Deliverable 5	D4 Quality Checking Milestone
+Create Design Pattern	https://github.com/COS420-F25/TeamA/issues/114	Todo / Sprint Backlog					AlexN-H		Brady D	Nov 12, 2025	Dec 5, 2025	Deliverable 5	D5 Quality Checking
+Design Pattern Description	https://github.com/COS420-F25/TeamA/issues/116	Todo / Sprint Backlog					DeveauJoshua2002		Alex N-H	Dec 4, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Fill out Application Feature Tables for Brightspace	https://github.com/COS420-F25/TeamA/issues/137	Todo / Sprint Backlog					AlexN-H		Brady D	Dec 2, 2025	Dec 7, 2025	Deliverable 5	D5
+Address Feedback on DCD	https://github.com/COS420-F25/TeamA/issues/138	Todo / Sprint Backlog					bdube21, DeveauJoshua2002		Brady D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Move Login Tests into separate file	https://github.com/COS420-F25/TeamA/issues/139	Todo / Sprint Backlog					bdube21		Josh D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Move Progress View into own file	https://github.com/COS420-F25/TeamA/issues/140	Todo / Sprint Backlog					AlexN-H		Brady D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Test Plan Acceptance Testing	https://github.com/COS420-F25/TeamA/issues/142	Todo / Sprint Backlog					AlexN-H, brendonprice		Brady D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	
+Test Plan Unit Tests Description	https://github.com/COS420-F25/TeamA/issues/143	Todo / Sprint Backlog					AlexN-H, brendonprice			Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Automated Tests for Dashboard Feature (Using TDD)	https://github.com/COS420-F25/TeamA/issues/144	Todo / Sprint Backlog					DeveauJoshua2002		Brady D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Automated Tests for Scheduling Feature (Using TDD)	https://github.com/COS420-F25/TeamA/issues/145	Todo / Sprint Backlog					bdube21		Josh D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Dashboard Feature Frontend Implementation	https://github.com/COS420-F25/TeamA/issues/146	Todo / Sprint Backlog					DeveauJoshua2002		Brady D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Scheduling Feature Frontend Implementation	https://github.com/COS420-F25/TeamA/issues/147	Todo / Sprint Backlog					bdube21		Josh D	Dec 2, 2025	Dec 6, 2025	Deliverable 5	D5 Quality Checking
+Create Dashboard Feature Progress Video	https://github.com/COS420-F25/TeamA/issues/148	Todo / Sprint Backlog					DeveauJoshua2002		Brady D	Dec 2, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Create Scheduling Feature Progress Video	https://github.com/COS420-F25/TeamA/issues/149	Todo / Sprint Backlog					bdube21		Josh D	Dec 2, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Create Progress Tracker Feature Videos	https://github.com/COS420-F25/TeamA/issues/150	Todo / Sprint Backlog					AlexN-H		Brady D	Dec 2, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Create Questionnaire Feature Progress Video	https://github.com/COS420-F25/TeamA/issues/151	Todo / Sprint Backlog					brendonprice		Brady D	Dec 2, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
+Stitch Progress Videos for D4 and D5	https://github.com/COS420-F25/TeamA/issues/152	Todo / Sprint Backlog					bdube21, DeveauJoshua2002		Brendon P	Dec 7, 2025	Dec 7, 2025	Deliverable 5	D5 Quality Checking
